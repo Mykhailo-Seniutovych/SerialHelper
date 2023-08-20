@@ -19,13 +19,14 @@ std::string Crc16Field::DisplayValue() const {
 }
 
 int Crc16Field::SaveToBuffer(uint8_t* buffer, int offset) const {
-    buffer[offset] = static_cast<uint8_t>((value_ >> 8) & 0xFF);
-    buffer[offset + 1] = static_cast<uint8_t>(value_ & 0xFF);
+    // CRC value will be written in little endian order
+    buffer[offset] = static_cast<uint8_t>(value_ & 0xFF);
+    buffer[offset + 1] = static_cast<uint8_t>((value_ >> 8) & 0xFF);
     return 2;
 }
 
 int Crc16Field::SetValueFromBuffer(uint8_t* buffer, int offset) {
-    // CRC value will be interpreted in big endian order
-    value_ = buffer[offset] << 8 | buffer[offset + 1];
+    // CRC value will be interpreted in little endian order
+    value_ = buffer[offset] | (buffer[offset + 1] << 8);
     return 2;
 }

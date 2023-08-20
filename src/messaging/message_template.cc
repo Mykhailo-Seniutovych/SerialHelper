@@ -1,4 +1,5 @@
 #include "messaging/message_template.hh"
+#include "utils/crc16.hh"
 
 MessageTemplate::MessageTemplate() {
     const int maxMessageSize = 1024;
@@ -7,6 +8,10 @@ MessageTemplate::MessageTemplate() {
 
 MessageTemplate::~MessageTemplate() {
     delete[] message_;
+}
+
+int MessageTemplate::GetMessageLength() {
+    return messageLength_;
 }
 
 void MessageTemplate::ParseFile(const std::string& filePath) {

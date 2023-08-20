@@ -10,6 +10,8 @@ class MessageTemplate {
 public:
     MessageTemplate();
     ~MessageTemplate();
+    int GetMessageLength();
+
     void ParseFile(const std::string& filePath);
     void Display();
     int SaveMessage(uint8_t* buffer);
