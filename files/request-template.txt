@@ -1,0 +1,31 @@
+hex:DeviceId             | A8
+int8:MsgLength           | 19
+int8:MsgId               | 1
+bitmask:Switchers-1
+    bit:SprayerMotor     | 0
+    bit:ChemSolenoid     | 0
+    bit:SprayerSolenoid  | 1
+    bit:Vacuum           | 1
+    bit:Blower           | 0
+    bit:XArmPower        | 0
+    bit:Flushing         | 1
+    bit:Brush Up/Down    | 1
+bitmask:Switchers-2
+    bit:Nozzle           | 0
+    bit:VacAir           | 1
+int8:GripperPosition     | 230
+int16:MotorA             | 32769
+int16:MotorB             | 17000
+int16:MotorC             | 17000
+int16:MotorD             | 17000
+int8:DoMainPlate         | 233
+int8:DoActuator          | 200
+bitmask:MaskDoOptions   
+    bit:Sideleft         | 0
+    bit:SideRight        | 1
+    bit:MainForward      | 1
+    bit:MainBackward     | 0
+    bit:ActForward       | 1
+    bit:ActBackward      | 0
+crc16:Crc16              | 0
+

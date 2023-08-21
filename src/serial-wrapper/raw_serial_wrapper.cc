@@ -46,7 +46,7 @@ void RawSerialWrapper::OpenConnection() {
     tty.c_oflag &= ~OPOST; // Prevent special interpretation of output bytes (e.g. newline chars)
     tty.c_oflag &= ~ONLCR; // Prevent conversion of newline to carriage return/line feed
 
-    tty.c_cc[VTIME] = 0;    // Wait for up to 25.5s (255 deciseconds), returning as soon as any data is received.
+    tty.c_cc[VTIME] = 255;    // Wait for up to 25.5s (255 deciseconds), returning as soon as any data is received.
     tty.c_cc[VMIN] = 0;
 
     auto baudRate = RawSerialWrapper::getBaudRate(settings_.baudRate);

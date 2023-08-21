@@ -1,0 +1,32 @@
+hex:DeviceId             | 0
+int8:MsgLength           | 0
+int8:MsgId               | 0
+bitmask:Statuses
+    bit:RemoteStopBtn    | 0
+    bit:HardStopBtn      | 0
+int8:DirtyWaterLevel     | 0
+int8:FreshWaterLevel     | 0
+int8:ChemLevel           | 0
+int8:BatteryLevel        | 0
+int8:DoMainPlate         | 0
+int8:DoActuator          | 0
+bitmask:DoOptions
+    bit:SideLeft         | 0
+    bit:SideRight        | 0
+    bit:MainForward      | 0
+    bit:MainBackward     | 0
+    bit:ActForward       | 0
+    bit:ActBackward      | 0
+int16:MotorAFreq         | 0
+int16:MotorBFreq         | 0
+int16:MotorCFreq         | 0
+int16:MotorDFreq         | 0
+int16:MotorAAcceleration | 0
+int16:MotorBAcceleration | 0
+int16:MotorCAcceleration | 0
+int16:MotorDAcceleration | 0
+int16:MotorABraking      | 0
+int16:MotorBBraking      | 0
+int16:MotorCBraking      | 0
+int16:MotorDBraking      | 0
+int16:Crc16              | 0
