@@ -42,6 +42,9 @@ void run_serial_send_cycle(bool sendWithoutConfirmation) {
             std::string response;
             std::cout << "Press enter to send next" << std::endl;
             getline(std::cin, response);
+            // Read again in case when file was edited when we were waiting for response
+            requestMessage.ParseFile("files/request-template.txt");
+            size = requestMessage.SaveMessage(buffer);
         }
         serialWrapper->Write(buffer, size);
         std::cout << "================================================================" << std::endl;
